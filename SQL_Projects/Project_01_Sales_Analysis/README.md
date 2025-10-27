@@ -385,9 +385,13 @@ EXEC sp_executesql @sql;
 Throughout this project, I sharpened my SQL firepower and applied real-world analytical thinking like a true data professional:
 
 **- Advanced Query Mastery:** Built complex multi-table joins, subqueries, and CTEs (WITH clauses) to answer business-critical questions.
+
 **- Automation Power:** Created User-Defined Functions (UDFs) and Stored Procedures to automate recurring reports and performance metrics — just like in enterprise BI workflows.
+
 **- Dynamic SQL Proficiency:** Developed dynamic pivot queries to automatically update quarterly performance reports without manual edits.
+
 **- Analytical Storytelling:** Translated numbers into actionable insights on profitability, employee performance, and discount strategy impact.
+
 **- Business Acumen:** Learned to think beyond queries — focusing on how each result connects to operational strategy, marketing, and resource allocation.
 
 ### 💡 Conclusions & Insights
