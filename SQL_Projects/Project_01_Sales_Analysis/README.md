@@ -45,7 +45,7 @@ WHERE product_id LIKE 'FUR%'
 GROUP BY YEAR(order_date), DATEPART(quarter, order_date)
 ORDER BY YEAR(order_date), DATEPART(quarter, order_date);
 ```
-Here’s the breakdown of total sales performance for furniture products by quarter:
+**Here’s the breakdown of total sales performance for furniture products by quarter:**
 - **Consistent Growth:** Sales rose steadily from Q1-2014 ($22.6K) to Q4-2014 ($64.5K), showing strong year-end momentum.
 - **Seasonal Pattern:** Each year, Q4 outperforms other quarters — likely driven by holiday campaigns and seasonal purchases.
 - **Demand Expansion:** The continuous quarterly increase signals expanding customer interest and effective marketing.
@@ -91,7 +91,7 @@ ORDER BY
     p.category, 
     discount_class;
 ```
-Here’s the breakdown of sales and profit performance across discount levels:
+**Here’s the breakdown of sales and profit performance across discount levels:**
 
 **Number of Orders:**
 - No Discount generated the highest order volumes across almost all categories — customers buy steadily even without incentives.
@@ -149,7 +149,7 @@ from ranked
 where profit_rank <= 2
 order by segment, profit_rank;
 ```
-Here’s the breakdown of the top-performing product categories by customer segment:
+**Here’s the breakdown of the top-performing product categories by customer segment:**
 
 - Consumer Segment: Copiers and Phones lead profitability — high-value personal purchases.
 - Corporate Segment: Copiers remain the strongest, followed by Accessories — driven by office procurement needs.
@@ -189,7 +189,7 @@ ORDER BY
     rounded_total_profit DESC;
 ```
 
-Here’s the breakdown of employee profit distribution across product categories:
+**Here’s the breakdown of employee profit distribution across product categories:**
 
 **Category Performance:**
 - Copiers consistently deliver the highest profit percentage (~19%), making them the most profitable category for employees.
@@ -260,7 +260,7 @@ ORDER BY
     profitability_ratio DESC;
 
 ```
-Here’s the breakdown of average profitability ratio by employee and product category:
+**Here’s the breakdown of average profitability ratio by employee and product category:**
 
 - Labels, Paper, and Envelopes show the highest profitability ratios (≈0.40–0.48) — proving they’re the most efficient categories in converting sales into profit.
 - Copiers consistently maintain a strong ratio (~0.45), indicating high-margin performance and reliable sales returns.
@@ -334,11 +334,75 @@ EXEC GetEmployeeSalesProfit
 
 ### 7. Dynamic SQL: Profit by State and Quarter
 
-To automate regional profit tracking, I developed a Dynamic SQL Query that calculates total profit for the last six quarters, pivoted by state. The script automatically updates with each new quarter added to the dataset.
+The final challenge involved using dynamic SQL to generate a pivoted profit report for the last six quarters, broken down by state. This query dynamically adjusts to include new quarterly data without manual updates.
 
 ``` 
+DECLARE @cols NVARCHAR(MAX);
+DECLARE @sql NVARCHAR(MAX);
 
+-- 🧩 Step 1: Get the last six quarters dynamically
+SELECT @cols = STRING_AGG(QUOTENAME(Quarter_Year), ',')
+FROM (
+    SELECT DISTINCT 
+        CONCAT('Q', DATEPART(QUARTER, ORDER_DATE), '-', YEAR(ORDER_DATE)) AS Quarter_Year
+        
+    FROM ORDERS
+    WHERE ORDER_DATE >= DATEADD(QUARTER, -6, (SELECT MAX(ORDER_DATE) FROM ORDERS))
+) q
+;
 
+-- 🧠 Step 2: Build the dynamic pivot SQL
+SET @sql = '
+SELECT STATE, ' + @cols + '
+FROM (
+    SELECT 
+        c.STATE,
+        CONCAT(''Q'', DATEPART(QUARTER, o.ORDER_DATE), ''-'', YEAR(o.ORDER_DATE)) AS Quarter_Year,
+        o.PROFIT
+    FROM ORDERS o
+    INNER JOIN CUSTOMER c 
+        ON o.CUSTOMER_ID = c.ID
+    WHERE o.ORDER_DATE >= DATEADD(QUARTER, -6, (SELECT MAX(ORDER_DATE) FROM ORDERS))
+) src
+PIVOT (
+    SUM(PROFIT)
+    FOR Quarter_Year IN (' + @cols + ')
+) AS pvt
+ORDER BY STATE;';
 
+-- 🚀 Step 3: Execute the SQL
+EXEC sp_executesql @sql;
 
+```
+**Key Findings:**
+- Profit distribution varies significantly by state, revealing clear regional leaders.
+- Some states exhibit consistent growth, while others show volatility quarter to quarter.
+- Q4 generally shows strong profit spikes, likely tied to seasonal demand peaks.
 
+### 🔥 What I Learned
+
+Throughout this project, I sharpened my SQL firepower and applied real-world analytical thinking like a true data professional:
+
+**- Advanced Query Mastery:** Built complex multi-table joins, subqueries, and CTEs (WITH clauses) to answer business-critical questions.
+**- Automation Power:** Created User-Defined Functions (UDFs) and Stored Procedures to automate recurring reports and performance metrics — just like in enterprise BI workflows.
+**- Dynamic SQL Proficiency:** Developed dynamic pivot queries to automatically update quarterly performance reports without manual edits.
+**- Analytical Storytelling:** Translated numbers into actionable insights on profitability, employee performance, and discount strategy impact.
+**- Business Acumen:** Learned to think beyond queries — focusing on how each result connects to operational strategy, marketing, and resource allocation.
+
+### 💡 Conclusions & Insights
+
+From my end-to-end analysis of retail sales and profitability:
+- Q4 = Profit King: Every year, Q4 sales outperform other quarters by 40–50%, driven by holiday demand.
+- Discount ≠ Profit: No-discount sales generated the highest total profit, proving that smart pricing beats deep markdowns.
+- Copiers = Cash Cow: Copiers dominated across all customer segments and employee profit contributions, proving to be the most strategic product line.
+- Employee Consistency: All employees exhibited similar category performance patterns, showing a unified sales strategy.
+- High-Margin Focus: Labels, Paper, and Copiers showed profitability ratios above 0.45, ideal targets for promotions and stock prioritization.
+- Automation Advantage: The stored procedure and dynamic SQL allowed instant performance tracking by date, employee, or state, mirroring professional BI automation practices.
+
+### 🚀 Closing Thoughts
+
+This project was more than just SQL practice — it was a full simulation of how a real data analyst transforms raw transactions into actionable business intelligence.
+
+By combining technical precision with strategic interpretation, I built a portfolio project that not only showcases SQL mastery but also demonstrates how data drives business success.
+
+Through this journey, I’ve learned to analyze, automate, and articulate — three pillars that define a strong data analyst ready to deliver impact in any organization.
