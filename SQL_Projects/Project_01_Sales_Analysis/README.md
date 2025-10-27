@@ -5,6 +5,7 @@
 Step into the world of retail analytics! This project explores how SQL can transform raw transactional data into valuable business insights — uncovering  sales trends,  discount impacts,  top-performing categories, and  employee profitability.
 
 All SQL scripts can be found here: [project_sql folder](./sql_project)
+Dataset here: [data set](./data_csv_files)
 
 ## 🪴 Background
 
@@ -318,7 +319,6 @@ EXEC GetEmployeeSalesProfit
     @EndDate = '2016-12-31';
 
 ````
-**Focus:** evaluates an employee’s total sales and profit within a selected date range, helping to measure short-term and long-term performance.
 
 **Key findings:**
 - The stored procedure dynamically adapts to any employee or date range — enabling deeper month-to-month 
@@ -392,11 +392,17 @@ Throughout this project, I sharpened my SQL firepower and applied real-world ana
 ### 💡 Conclusions & Insights
 
 From my end-to-end analysis of retail sales and profitability:
+
 - Q4 = Profit King: Every year, Q4 sales outperform other quarters by 40–50%, driven by holiday demand.
-- Discount ≠ Profit: No-discount sales generated the highest total profit, proving that smart pricing beats deep markdowns.
-- Copiers = Cash Cow: Copiers dominated across all customer segments and employee profit contributions, proving to be the most strategic product line.
+  
+- Discount ≠ Profit: No-discount sales generated the highest total profit, proving that smart pricing beats deep markdowns
+  
+- Copiers = Cash Cow: Copiers dominated across all customer segments and employee profit contributions, proving to be the most strategic product line
+  
 - Employee Consistency: All employees exhibited similar category performance patterns, showing a unified sales strategy.
-- High-Margin Focus: Labels, Paper, and Copiers showed profitability ratios above 0.45, ideal targets for promotions and stock prioritization.
+  
+- High-Margin Focus: Labels, Paper, and Copiers showed profitability ratios above 0.45, ideal targets for promotions and stock prioritization
+  
 - Automation Advantage: The stored procedure and dynamic SQL allowed instant performance tracking by date, employee, or state, mirroring professional BI automation practices.
 
 ### 🚀 Closing Thoughts
