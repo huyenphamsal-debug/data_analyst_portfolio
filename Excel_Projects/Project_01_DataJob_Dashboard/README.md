@@ -1,6 +1,6 @@
 # Excel Data Jobs Salary Dashboard
 
- Image
+![Salary Dashboard](Salary_dashboard_image.png)
 
 ## Introduction
 This Excel dashboard explores salary patterns for various data-related careers—helping job seekers evaluate compensation and make informed career choices.
@@ -8,7 +8,7 @@ This Excel dashboard explores salary patterns for various data-related careers�
 The dataset, sourced from an Excel training course, contains comprehensive information on job titles, salaries, locations, and key technical skills. This project demonstrates how Excel can be used for data cleaning, analysis, and visualization to uncover real-world insights.
 
 ### Dashboard File 
-My dashboard is in [Salary_Dashboard.xlsx](Salary_Dashboard.xlsx).
+My dashboard is in [Salary_Dashboard](./Salary_Dashboard.xlsx).
 
 ### Excel Skills Used 
 - **📉 Charts** — to visualize job and regional salary comparisons
