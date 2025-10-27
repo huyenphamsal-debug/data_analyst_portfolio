@@ -56,9 +56,13 @@ Here’s the breakdown of total sales performance for furniture products by quar
 
 ### 2. Discount Level Impact on Sales Performance
 This analysis examined how different discount levels affect both sales volume and profit margins across product categories. Discounts were categorized into:
+
 No Discount (0)
+
 Low Discount (0–0.2)
+
 Medium Discount (0.2–0.5)
+
 High Discount (> 0.5)
 
 ```
@@ -88,6 +92,7 @@ ORDER BY
     discount_class;
 ```
 Here’s the breakdown of sales and profit performance across discount levels:
+
 **Number of Orders:**
 - No Discount generated the highest order volumes across almost all categories — customers buy steadily even without incentives.
 - Low Discounts (≤0.2) brought only a slight uplift in volume but not enough to surpass no-discount performance.
@@ -111,6 +116,52 @@ Here’s the breakdown of sales and profit performance across discount levels:
 ![Total Profit By Discount Level & Category](images/Problem_02_Profitbydiscount.png)
 *Bar Chart visualizing total Profit by discount level accross product categories; ChatGPT generated this graph from my SQL query results*
 
+
+### 3. Top-Performing Product Categories by Customer Segment
+
+To identify which product categories perform best within each customer segment, I ranked categories by total sales and profit, focusing on the top two per segment.
+
+```
+with category_summary as (
+    select
+        c.segment,
+        p.category,
+        sum(o.sales) as total_sales,
+        sum(o.profit) as total_profit
+    from orders as o
+    inner join product as p
+        on o.product_id = p.id
+    inner join customer as c
+        on o.customer_id = c.id
+    group by c.segment, p.category
+),
+ranked as (
+    select
+        segment,
+        category,
+        rank() over (partition by segment order by total_sales desc) as sales_rank,
+        rank() over (partition by segment order by total_profit desc) as profit_rank
+    from category_summary
+)
+select
+    *
+from ranked
+where profit_rank <= 2
+order by segment, profit_rank;
+```
+Here’s the breakdown of the top-performing product categories by customer segment:
+
+- Consumer Segment: Copiers and Phones lead profitability — high-value personal purchases.
+- Corporate Segment: Copiers remain the strongest, followed by Accessories — driven by office procurement needs.
+- Home Office Segment: Copiers again dominate, showing consistent performance across all segments.
+
+**Key Takeaway:**
+- Copiers are the undisputed profit leaders across all customer segments — a core product to prioritize in sales and inventory strategies.
+- Segment-based marketing should emphasize Phones for consumers and Accessories for corporates.
+- Strengthening promotions and supply chain efficiency around top categories can further boost profitability across all customer types.
+
+![Top 2 Profitable Categories per Customer Segment](images/Problem_03_Profitable_Categories.png)
+*Clustered bar chart showing top 2 product categories by profit for each customer segment; ChatGPT generated this graph from my SQL query results*
 
 
 
