@@ -5,6 +5,7 @@
 Step into the world of retail analytics! This project explores how SQL can transform raw transactional data into valuable business insights — uncovering  sales trends,  discount impacts,  top-performing categories, and  employee profitability.
 
 All SQL scripts can be found here: [project_sql folder](./sql_project)
+
 Dataset here: [data set](./data_csv_files)
 
 ## 🪴 Background
