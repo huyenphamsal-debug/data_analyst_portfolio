@@ -118,20 +118,26 @@ This report is split into four pages to provide both a high-level summary and fo
 
 **Page 1: Sales Performance Overview**
 
-![Pizza Dashboard](images_pizz/Pizza Analysis_Dashboard-1.png)
+![Pizza Dashboard](./images_pizza./Pizza_Analysis_Dashboard-1.png)
 
 
 This is your mission control for the pizza business. It presents key KPIs such as Total Revenue, Orders, Average Order Value, and Quantity Sold, along with daily, weekly, and monthly sales trends. Users can quickly identify peak days (Friday & Saturday) and key operating hours (12–2 PM, 6–9 PM).
 
 **Page 2: Product Performance**
 
+![Product Performance](./images_pizza./Pizza_Analysis_Dashboard-2.png)
+
 This page ranks pizzas by sales and revenue, highlighting top categories like Classic and Supreme while identifying underperforming items for potential menu optimization.
 
 **Page 3: Size & Ingredient Insights**
 
+![Size & Ingredient](./images_pizza./Pizza_Analysis_Dashboard-3.png)
+
 This is the deep-dive page for product composition. It analyses the relationship between pizza size, ingredient usage, and sales performance, revealing that Large and Medium pizzas dominate and ingredients like Garlic, Tomato, and Red Onion drive the highest returns.
 
 **Page 4: Order Frequency & Timing**
+
+![Order Frequency & Timing](./images_pizza./Pizza_Analysis_Dashboard-4.png)
 
 This operational view explores customer order behaviour and service efficiency, comparing single vs multi-item orders and tracking average order intervals (10.8 mins) to assess kitchen performance and demand peaks.
 
