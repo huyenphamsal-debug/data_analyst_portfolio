@@ -118,7 +118,8 @@ This report is split into four pages to provide both a high-level summary and fo
 
 **Page 1: Sales Performance Overview**
 
-![Data Jobs Dashboard Page 1](../Resources/images/Project1_Dashboard_Page1.gif) 
+![Pizza Dashboard](images_pizz/Pizza Analysis_Dashboard-1.png)
+
 
 This is your mission control for the pizza business. It presents key KPIs such as Total Revenue, Orders, Average Order Value, and Quantity Sold, along with daily, weekly, and monthly sales trends. Users can quickly identify peak days (Friday & Saturday) and key operating hours (12–2 PM, 6–9 PM).
 
