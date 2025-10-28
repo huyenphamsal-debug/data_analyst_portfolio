@@ -1,16 +1,15 @@
 # 🍕 Pizza Sales Analysis Dashboard (Power BI)
-Image
 
 ## 🧭 Business Context
 As a Data Analyst for a pizza manufacturing and distribution company, my role was to transform 2015 transactional sales data into actionable insights that could guide strategic business decisions.
 The project aimed to analyse key operational metrics, identify sales trends, evaluate product performance, and assess order efficiency using Power BI.
 
 **📂 Dataset:**
-- Data_pizza.xlsx – transactional records (2015)
-- Data_dictionary.xlsx – metadata for fields and relationships
+- [Data_pizza](./data/data_pizza.csv) – transactional records (2015)
+- [Data_dictionary](./data/data_dictionary.xlsx)  – Data Dictionary
 
 ### Dashboard File
-You can find the file for the dashboard here: [`Pizza Analysis_Dashboard.pbix`](Pizza Analaysis_Dashboard.pbix).
+You can find the file for the dashboard here: [Pizza_Dashboard](https://github.com/SallyPham-analytics/data_analyst_portfolio/blob/main/PowerBI_Projects/Project_01_Pizza_Analysis/Pizza%20Analysis_Dashboard.pbix)
 
 ## 🧠 Tools & Techniques
 Power BI | Power Query | DAX | Data Modeling | Excel | ETL | Data Storytelling | Dashboard Design
@@ -113,15 +112,7 @@ To calculate the average time gap between consecutive orders:
 
 The resulting TimeDifference_Minutes column was then used to determine the Average Order Interval.
 
-### **4. Dashboard Overview** REDO 
-
-Built a 4-page interactive dashboard with consistent dark theme and teal-yellow palette:
-- Sales Performance: KPI cards, daily/weekly/monthly trends, weekday analysis
-- Product Performance: Category rankings, top/bottom pizza comparison
-- Size & Ingredient Analysis: Ingredient correlation, size-volume relationship
-- Order Frequency & Timing: Order types Fequency, interval metrics
-Added slicers (Month, Weekday, Category) and annotation storytelling for professional presentation.
-
+### **4. Dashboard Overview**
 
 This report is split into four pages to provide both a high-level summary and focused analysis on specific business areas.
 
