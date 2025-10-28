@@ -416,4 +416,4 @@ This project was more than just SQL practice — it was a full simulation of how
 
 By combining technical precision with strategic interpretation, I built a portfolio project that not only showcases SQL mastery but also demonstrates how data drives business success.
 
-Through this journey, I’ve learned to analyze, automate, and articulate — three pillars that define a strong data analyst ready to deliver impact in any organization.
+Through this journey, I’ve learned to analyze, automate, and articulate — three pillars that define a strong data analyst ready to deliver impact in any organization. 
