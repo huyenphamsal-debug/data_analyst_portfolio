@@ -162,8 +162,8 @@ order by segment, profit_rank;
 - Segment-based marketing should emphasize Phones for consumers and Accessories for corporates.
 - Strengthening promotions and supply chain efficiency around top categories can further boost profitability across all customer types.
 
-![Top 2 Profitable Categories per Customer Segment](images/Problem_03_Profitable_Categories.png)
-*Clustered bar chart showing top 2 product categories by profit for each customer segment; ChatGPT generated this graph from my SQL query results*
+![Top 2 Profitable Categories per Customer Segment](images/Problem_03_Profit_Rank.png)
+
 
 
 
