@@ -264,10 +264,10 @@ ORDER BY
 ```
 **Here’s the breakdown of average profitability ratio by employee and product category:**
 
-- Labels, Paper, and Envelopes show the highest profitability ratios (≈0.40–0.48) — proving they’re the most efficient categories in converting sales into profit.
-- Copiers consistently maintain a strong ratio (~0.45), indicating high-margin performance and reliable sales returns.
-- Accessories and Fasteners remain moderately profitable (~0.30–0.35), suggesting steady but limited margin potential.
-- Chairs, Tables, and Supplies often show negative or near-zero ratios, pointing to poor profitability and potential over-discounting or high costs.
+- Labels, Paper, and Envelopes show the highest profitability ratios (≈0.42–0.45) — proving they’re the most efficient categories in converting sales into profit.
+- Copiers consistently maintain a strong ratio (~0.37), indicating high-margin performance and reliable sales returns.
+- Accessories and Fasteners remain moderately profitable (~0.25–0.32), suggesting steady but limited margin potential.
+- Bookcases, Tables, and Supplies often show negative or near-zero ratios, pointing to poor profitability and potential over-discounting or high costs.
 - The overall pattern is consistent across employees — indicating shared product focus and pricing strategy within the sales team.
 
 **🧩 Key Takeaways**
@@ -278,7 +278,7 @@ ORDER BY
 
 
 ![Profit Ratio by Product Category per Employee](images/Problem_05_ProfitabilityRatio_employee.png)
-*Bar Graph visualizing profitablity ratio (Profit÷Sales) for each emploee across product categories ; I am using PowerBi to generate this graph from my SQL query results*
+*Column chart visualizing visualizing profitablity ratio (Profit÷Sales) by product category, filtered by each employee; I am using PowerBi to generate this graph from my SQL query results*
 
 
 ### 6. Stored Procedure: Employee Performance Over Time
