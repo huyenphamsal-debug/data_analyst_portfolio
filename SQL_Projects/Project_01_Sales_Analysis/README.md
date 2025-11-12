@@ -209,8 +209,8 @@ ORDER BY
 
 
 
-![Profit Contribution by Category per Employee](images/Problem_04_ProfitContribution_employee.png)
-*Column chart showing each profit percentage by product category filter by each employee; I am using PowerBi to generate this graph from my SQL query results*
+![Profit Contribution by Category per Employee](images/Problem_04_Profit_employee.png)
+*Column chart visualizing profit percentage by product category, filtered by each employee; I am using PowerBi to generate this graph from my SQL query results*
 
 ### 5. Profitability Ratio Function (UDF)
 
