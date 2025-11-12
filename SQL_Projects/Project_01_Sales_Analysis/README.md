@@ -277,7 +277,7 @@ ORDER BY
 - Managers can use this ratio to reward top performers, refine sales incentives, and guide training efforts toward underperforming product categories.
 
 
-![Profit Ratio by Product Category per Employee](images/Problem_05_ProfitabilityRatio_employee.png)
+![Profit Ratio by Product Category per Employee](images/Problem_05_Profitability_Ratio_Employee.png)
 *Column chart visualizing visualizing profitablity ratio (Profit÷Sales) by product category, filtered by each employee; I am using PowerBi to generate this graph from my SQL query results*
 
 
