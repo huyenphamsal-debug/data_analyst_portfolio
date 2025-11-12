@@ -194,23 +194,23 @@ ORDER BY
 **Here’s the breakdown of employee profit distribution across product categories:**
 
 **Category Performance:**
-- Copiers consistently deliver the highest profit percentage (~19%), making them the most profitable category for employees.
-- Phones and Binders follow closely with ~14% profit share, indicating strong secondary performance.
-- Accessories and Paper show moderate profit contributions, while other categories remain comparatively lower.
+- Copiers consistently deliver the highest profit percentage (~19.5%), making them the most profitable category for employees.
+- Accessories and Phones follow closely with ~15.7% profit share, indicating strong secondary performance.
+- Paper, Binders and Chairs show moderate profit contributions, while other categories remain comparatively lower.
 
 **Employee Performance:**
-- All employees demonstrate similar profit patterns — relying heavily on Copiers and Phones for most of their profit.
+- All employees demonstrate similar profit patterns — relying heavily on Copiers and Accessories for most of their profit.
 - Consistency across employees suggests uniform sales focus or shared product allocation strategy.
 
 **Key Takeaway:**
 - Copiers are the top profit driver across all employees and should remain the core focus in product sales strategy.
-- To balance revenue streams, employees could increase cross-selling efforts in mid-performing categories like Binders and Accessories.
+- To balance revenue streams, employees could increase cross-selling efforts in mid-performing categories like Accessories and Phones.
 - Management can use these insights to tailor employee incentive plans around high-profit products.
 
 
 
 ![Profit Contribution by Category per Employee](images/Problem_04_ProfitContribution_employee.png)
-*Stacked bar chart showing each employee’s profit percentage by product category; I am using PowerBi to generate this graph from my SQL query results*
+*Column chart showing each profit percentage by product category filter by each employee; I am using PowerBi to generate this graph from my SQL query results*
 
 ### 5. Profitability Ratio Function (UDF)
 
