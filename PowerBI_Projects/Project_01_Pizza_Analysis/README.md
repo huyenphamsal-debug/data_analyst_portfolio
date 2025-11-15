@@ -78,22 +78,20 @@ Linked Ingredient dim → pizza dim via pizza_id, enabling scatter-plot analysis
 **3.3 Order Classification Logic**
 
 ```
-OrderSummary =
+OrderSummary = 
 SUMMARIZE(
     data_pizza,
     data_pizza[order_id],
-    "TotalQuantity", SUM(data_pizza[quantity])
+    "DistinctPizzaTypes", DISTINCTCOUNT(data_pizza[name])
 )
 
-OrderType =
-IF(OrderSummary[TotalQuantity] = 1, "Single-item Order", "Multi-item Order")
-
-% of Orders =
-DIVIDE(
-    COUNTROWS(OrderSummary),
-    CALCULATE(COUNTROWS(OrderSummary), ALL(OrderSummary)),
-    0
+OrderType = 
+IF(
+    [DistinctPizzaTypes] = 1,
+    "Single-item",
+    "Multi-item"
 )
+
 ```
 ✅ Differentiates single vs multi-item orders and drives frequency charts.
 
